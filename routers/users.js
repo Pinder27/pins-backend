@@ -9,9 +9,6 @@ router.post("/register", async(req,res)=>{
     if(email_) return res.status(400).send('email already registered');
     
 
-
-
-
     const salt = await bcrypt.genSalt(8);
     const hashPassword = await bcrypt.hash(req.body.password, salt);
 
